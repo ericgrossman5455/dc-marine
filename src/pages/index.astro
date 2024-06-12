@@ -1,24 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout title="DC Marine">
+<Layout title='DC Marine'>
 	<main>
+		<Icon class='wordmark-horizontal' name='wordmark-horizontal' />
+		<Icon class='wordmark-vertical' name='wordmark-vertical' />
 		<h1>DC Marine</h1>
-		<p class="instructions">
-			At DC Marine, a one-man shop with a heart as big as the ocean, we bring your vessel back to life. We specialize in meticulous repairs and handcrafted boat building, all delivered with the dedication and expertise you can only find from a passionate owner-operator. Whether you dream of a new skiff or need a loving hand to restore your family heirloom, DC Marine is here to get you sailing smoothly.
+		<p class='instructions'>
+			At DC Marine, a one-man shop with a heart as big as the ocean, we bring your vessel back to life.
+			We specialize in meticulous repairs and handcrafted boat building, all delivered with the
+			dedication and expertise you can only find from a passionate owner-operator. Whether you dream of a
+			new skiff or need a loving hand to restore your family heirloom, DC Marine is here to get you
+			sailing smoothly.
 		</p>
-		<ul role="list" class="link-card-grid">
+		<ul role='list' class='link-card-grid'>
 			<Card
-				href="https://docs.astro.build/"
-				title="Repairs"
-				body="Lorem Ipsum lorem lorem ipps lorem lorem ipps lorem lorem ipps"
+				href='https://docs.astro.build/'
+				title='Repairs'
+				body='Lorem Ipsum lorem lorem ipps lorem lorem ipps lorem lorem ipps'
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Equipment"
-				body="Lorem Ipsum lorem lorem ipps lorem lorem ipps lorem lorem ipps lorem lorem ipps."
+				href='https://astro.build/integrations/'
+				title='Equipment'
+				body='Lorem Ipsum lorem lorem ipps lorem lorem ipps lorem lorem ipps lorem lorem ipps.'
 			/>
 		</ul>
 	</main>
@@ -33,6 +40,17 @@ import Card from '../components/Card.astro';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+
+		.wordmark-horizontal {
+			font-size: 40px;
+			display: none;
+			margin: 0 auto;
+		}
+		.wordmark-vertical {
+			font-size: 60px;
+			display: block;
+			margin: 0 auto;
+		}
 	}
 	.astro-a {
 		position: absolute;

@@ -3,15 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-		"dev": "open http://localhost:4321/; astro dev",
-		"dev-windows": "start http://localhost:4321/ & astro dev",
-		"preview": "astro build; astro preview",
-		"build": "astro build",
-		"astro": "astro"
+    "dev": "open http://localhost:4321/; astro dev",
+    "dev-windows": "start http://localhost:4321/ & astro dev",
+    "preview": "astro build; astro preview",
+    "build": "astro build",
+    "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.10.1",
     "@astrojs/check": "^0.7.0",
+    "astro": "^4.10.1",
+    "astro-icon": "^1.1.0",
     "typescript": "^5.4.5"
   }
 }
