@@ -1,51 +1,75 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/MainLayout.astro';
 import { Icon } from 'astro-icon/components';
 ---
 
-<Layout title='DC Marine'>
+<Layout title='DC Marine' description='Boat repairs, enhancements, and equipment by Dave Canepa'>
 	<main>
 		<Icon class='wordmark-horizontal' name='wordmark-horizontal' />
-		<Icon class='wordmark-vertical' name='wordmark-vertical' />
-		<h1>Welcome</h1>
-		<p class='instructions'>
-			At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to life.
-			We specialize in meticulous repairs and handcrafted boat building, all delivered with the
-			dedication and expertise you can only find from a passionate owner-operator. Whether you dream of a
-			new skiff or need a loving hand to restore your family heirloom, DC Marine is here to get you
-			sailing smoothly.
+		<section class='hero-wrapper'>
+			<div class='greeting'>
+				<h1>Welcome.</h1>
+				<p>
+					At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to
+					life. We specialize in meticulous repairs and handcrafted boat building, all delivered with the
+					dedication and expertise you can only find from a passionate owner-operator. Whether you dream
+					of a new skiff or need a loving hand to restore your family heirloom, DC Marine is here to get
+					you sailing smoothly.
+				</p>
+			</div>
+		</section>
+
+		<h1>Welcome.</h1>
+		<p>
+			At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to
+			life. We specialize in meticulous repairs and handcrafted boat building, all delivered with the
+			dedication and expertise you can only find from a passionate owner-operator. Whether you dream
+			of a new skiff or need a loving hand to restore your family heirloom, DC Marine is here to get
+			you sailing smoothly.
 		</p>
 	</main>
 </Layout>
 
-<style>
+<style lang='scss'>
 	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		text-align: center;
-
 		.wordmark-horizontal {
 			font-size: 40px;
-			display: none;
-			margin: 0 auto;
+			display: block;
+			position: fixed;
+			top: 50px;
+			left: 40px;
+			z-index: 9;
 		}
 
-		.wordmark-vertical {
-			font-size: 60px;
-			display: block;
-			margin: 20px auto;
+		.hero-wrapper {
+			display: flex;
+			height: 100svh;
+			align-items: center;
+			padding: 0 10%;
+
+			&::before {
+				content: '';
+				z-index: 1;
+				position: fixed;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px;
+				background-image: url(./assets/hero-wide.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: 70% 100%;
+				opacity: 60%;
+
+				@media only screen and (max-width: 600px) {
+					background-position: 83% 100%;
+				}
+			}
+
+			.greeting {
+				z-index: 2;
+				max-width: 650px;
+			}
 		}
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
 	}
 </style>
