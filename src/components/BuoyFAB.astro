@@ -1,0 +1,67 @@
+---
+interface Props {
+	copy: string;
+	href: string;
+}
+
+const { copy, href } = Astro.props;
+---
+
+<a href={href} class='buoy-FAB'>
+	<p>{copy}</p>
+</a>
+
+<style lang='scss'>
+	$buoy-size: 50px;
+
+	.buoy-FAB {
+		position: sticky;
+		bottom: 20px;
+		text-decoration: none;
+		color: #fff;
+		margin: 0 auto;
+		width: fit-content;
+		display: flex;
+		align-items: center;
+		border-radius: $buoy-size;
+		min-height: $buoy-size;
+		min-width: $buoy-size;
+		z-index: 9;
+		outline: 15px solid var(--accent-orange);
+		animation: buoy-morph 2s cubic-bezier(0.26, 0.4, 0, 1) 0s forwards;
+		box-shadow: 0px 5px 10px rgb(166, 96, 55);
+
+		p {
+			margin: 12px 24px;
+			animation: fade-in 2s cubic-bezier(0.26, 0.4, 0, 1) 0.3s backwards;
+			text-transform: uppercase;
+			letter-spacing: 1.4px;
+			font-weight: 300;
+		}
+
+		@keyframes buoy-morph {
+			to {
+				background-color: var(--accent-orange);
+				outline-width: 1px;
+				outline-color: #ff8838;
+				bottom: 40px;
+			}
+		}
+
+		@keyframes fade-in {
+			from {
+				margin: 0;
+				font-size: 0;
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+				// Safari height fix
+				line-height: 0;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+		}
+	}
+</style>

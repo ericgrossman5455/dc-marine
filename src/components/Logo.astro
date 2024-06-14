@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="wordmark-container">
+	<Icon class='wordmark-horizontal' name='wordmark-horizontal' />
+	<Icon class='wordmark-vertical' name='wordmark-vertical' />
+</div>
+
+<style lang='scss'>
+	.wordmark-container {
+		position: fixed;
+		width: 100%;
+		z-index: 9;
+
+		.wordmark-horizontal {
+			font-size: 40px;
+			margin-top: 50px;
+			margin-left: 40px;
+			display: block;
+		}
+
+		.wordmark-vertical {
+			display: none;
+		}
+	
+		@media only screen and (max-width: 600px) {
+			.wordmark-horizontal {
+				display: none;
+			}
+
+			.wordmark-vertical {
+				font-size: 55px;
+				display: block;
+				margin: 30px auto 0;
+			}
+		}
+
+	}
+</style>

@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
-import { Icon } from 'astro-icon/components';
+import Logos from '../components/Logo.astro';
+import BuoyFAB from '../components/BuoyFAB.astro';
 ---
 
 <Layout title='DC Marine' description='Boat repairs, enhancements, and equipment by Dave Canepa'>
+	<Logos />
 	<main>
-		<Icon class='wordmark-horizontal' name='wordmark-horizontal' />
 		<section class='hero-wrapper'>
 			<div class='greeting'>
 				<h1>Welcome.</h1>
@@ -18,29 +19,21 @@ import { Icon } from 'astro-icon/components';
 				</p>
 			</div>
 		</section>
+		<BuoyFAB href='#' copy='Contact' />
 
 		<h1>Welcome.</h1>
 		<p>
-			At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to
-			life. We specialize in meticulous repairs and handcrafted boat building, all delivered with the
-			dedication and expertise you can only find from a passionate owner-operator. Whether you dream
-			of a new skiff or need a loving hand to restore your family heirloom, DC Marine is here to get
-			you sailing smoothly.
+			At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to life. We
+			specialize in meticulous repairs and handcrafted boat building, all delivered with the dedication
+			and expertise you can only find from a passionate owner-operator. Whether you dream of a new skiff
+			or need a loving hand to restore your family heirloom, DC Marine is here to get you
+			sailing smoothly.
 		</p>
 	</main>
 </Layout>
 
 <style lang='scss'>
 	main {
-		.wordmark-horizontal {
-			font-size: 40px;
-			display: block;
-			position: fixed;
-			top: 50px;
-			left: 40px;
-			z-index: 9;
-		}
-
 		.hero-wrapper {
 			display: flex;
 			height: 100svh;
@@ -49,7 +42,7 @@ import { Icon } from 'astro-icon/components';
 
 			&::before {
 				content: '';
-				z-index: 1;
+				z-index: -1;
 				position: fixed;
 				top: 0px;
 				right: 0px;
@@ -59,7 +52,7 @@ import { Icon } from 'astro-icon/components';
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: 70% 100%;
-				opacity: 60%;
+				animation: scale-down 4s cubic-bezier(0.26, 0.4, 0, 1) 0s forwards;
 
 				@media only screen and (max-width: 600px) {
 					background-position: 83% 100%;
@@ -67,8 +60,21 @@ import { Icon } from 'astro-icon/components';
 			}
 
 			.greeting {
-				z-index: 2;
 				max-width: 650px;
+			}
+		}
+
+		@keyframes scale-down {
+			from {
+				opacity: 70%;
+				filter: blur(5px);
+				transform: scale(1.1);
+			}
+			
+			to {
+				opacity: 50%;
+				filter: blur(0);
+				transform: scale(1);
 			}
 		}
 	}
