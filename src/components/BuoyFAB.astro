@@ -1,14 +1,15 @@
 ---
 interface Props {
-	copy: string;
 	href: string;
 }
 
-const { copy, href } = Astro.props;
+const { href } = Astro.props;
 ---
 
 <a href={href} class='buoy-FAB'>
-	<p>{copy}</p>
+	<p>
+		<slot />
+	</p>
 </a>
 
 <style lang='scss'>
