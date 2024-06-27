@@ -36,11 +36,12 @@ const { title, description } = Astro.props;
 <style is:global>
 	:root {
 		--accent-orange: rgb(216, 97, 0);
+		--background-blue: rgb(0, 56, 120);
 	}
 	
 	html {
 		scroll-behavior: smooth;
-		background: #002044;
+		background: var(--background-blue);
 		color: white;
 		font-family: DM Sans, sans-serif;
 	}
