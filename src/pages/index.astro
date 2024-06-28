@@ -8,27 +8,52 @@ import BuoyFAB from '../components/BuoyFAB.astro';
 <Layout title='DC Marine' description='Boat repairs, enhancements, and equipment by Dave Canepa'>
 	<Logos />
 	<main>
-		<Hero greeting="Welcome.">
+		<Hero greeting='Welcome.'>
 			At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to life. We
 			specialize in meticulous repairs and handcrafted boat building, all delivered with the dedication
 			and expertise you can only find from a passionate owner-operator. Whether you dream of a new skiff
 			or need a loving hand to restore your family heirloom, DC Marine is here to get you
 			sailing smoothly.
 		</Hero>
-		<BuoyFAB href='#'>Contact</BuoyFAB>
 
-		<h1>Welcome.</h1>
 		<p>
-			At DC Marine, a one-man shop with a heart as big as the ocean, I bring your vessel back to life. We
-			specialize in meticulous repairs and handcrafted boat building, all delivered with the dedication
-			and expertise you can only find from a passionate owner-operator. Whether you dream of a new skiff
-			or need a loving hand to restore your family heirloom, DC Marine is here to get you
-			sailing smoothly.
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat minima non assumenda
+			reiciendis quae quia vel, esse rerum odio id ea fuga voluptatem incidunt enim consequatur ab odit
+			dolorem?
 		</p>
+		<p>
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat minima non assumenda
+			reiciendis quae quia vel, esse rerum odio id ea fuga voluptatem incidunt enim consequatur ab odit
+			dolorem?
+		</p>
+		<p>
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat minima non assumenda
+			reiciendis quae quia vel, esse rerum odio id ea fuga voluptatem incidunt enim consequatur ab odit
+			dolorem?
+		</p>
+		<BuoyFAB href='#'>Contact</BuoyFAB>
 	</main>
 </Layout>
 
 <style lang='scss'>
 	main {
+		&::before {
+			content: '';
+			z-index: -1;
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			background-image: url(./assets/hero-bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 70% 100%;
+			animation: scale-down 4s cubic-bezier(0.26, 0.4, 0, 1) 0s forwards;
+
+			@media only screen and (max-width: 600px) {
+				background-position: 83% 100%;
+			}
+		}
 	}
 </style>
