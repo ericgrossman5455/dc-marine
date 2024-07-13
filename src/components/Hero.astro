@@ -32,7 +32,7 @@ const { greeting, greetingLineBreaks } = Astro.props;
 		justify-content: center;
 		position: sticky;
 		top: 0;
-		overflow-x: clip;
+		contain: paint;
 
 		@media only screen and (max-width: 600px) {
 			padding: 0 25px;
