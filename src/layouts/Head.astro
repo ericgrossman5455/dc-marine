@@ -24,7 +24,7 @@ const { title, description } = Astro.props;
 		<meta name='application-name' content='DC Marine' />
 		<meta name='msapplication-TileColor' content='#ffffff' />
 		<meta name='msapplication-config' content='/favicons/browserconfig.xml' />
-		<meta name='theme-color' content='#ffffff' />
+		<meta name='theme-color' content='#d86100' />
 		<meta name='description' content={description} />
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
@@ -33,17 +33,16 @@ const { title, description } = Astro.props;
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		--accent-orange: rgb(216, 97, 0);
-		--background-blue: rgb(0, 56, 120);
+		--accent-orange: #d86100;
+		--background-blue: #2A407B;
 	}
 	
 	html {
 		scroll-behavior: smooth;
-		background: var(--background-blue);
-		color: white;
+		color: #ffffff;
 		font-family: DM Sans, sans-serif;
 	}
-
 </style>
