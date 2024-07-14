@@ -30,10 +30,12 @@ const { href } = Astro.props;
 		border-radius: $fab-diameter;
 		min-height: $fab-diameter;
 		min-width: $fab-diameter;
-		border-top: $buoy-thickness solid var(--accent-orange);
-		border-right: $buoy-thickness ridge #fff;
-		border-bottom: $buoy-thickness solid var(--accent-orange);
-		border-left: $buoy-thickness ridge #fff;
+		border-thickness: $buoy-thickness;
+		border-style: ridge;
+		border-top-color: var(--accent-orange);
+		border-right-color: #fff;
+		border-bottom-color: var(--accent-orange);
+		border-left-color: #fff;
 		animation: buoy-morph 1.5s cubic-bezier(0.26, 1, 0, 1) 1s forwards;
 
 		.splash {
@@ -83,8 +85,7 @@ const { href } = Astro.props;
 				border-width: $buoy-thickness;
 				border-right-color: #fff;
 				border-left-color: #fff;
-				border-right-style: ridge;
-				border-left-style: ridge;
+				border-style: ridge;
 			}
 
 			100% {
