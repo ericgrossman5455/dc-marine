@@ -1,5 +1,5 @@
 ---
-import Line from './Line.astro';
+import Line from '../Line.astro';
 
 interface Props {
 	greeting: string;
@@ -57,7 +57,7 @@ const { greeting, greetingLineBreaks } = Astro.props;
 			height: 700px;
 			top: -17px;
 			left: -100px;
-			animation: shine 6s cubic-bezier(0.26, 0.4, 0, 1) 0s backwards;
+			animation: light-ray-shine 6s cubic-bezier(0.26, 0.4, 0, 1) 0s backwards;
 
 			@media only screen and (max-width: 600px) {
 				transform: rotate(-27deg);
@@ -67,7 +67,7 @@ const { greeting, greetingLineBreaks } = Astro.props;
 			}
 		}
 
-		@keyframes shine {
+		@keyframes light-ray-shine {
 			from {
 				opacity: 0;
 				transform: rotate(-38deg) scale(0.8);
