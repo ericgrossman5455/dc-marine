@@ -7,43 +7,42 @@ const { href } = Astro.props;
 ---
 
 <a href={href} class='buoy-FAB'>
+	<div class='splash'></div>
 	<p>
 		<slot />
 	</p>
 </a>
 
 <style lang='scss'>
-	$buoy-thickness: 23px;
-	$fab-size: 50px;
-
 	.buoy-FAB {
-		position: sticky;
-		text-decoration: none;
-		color: #fff;
+		$fab-diameter: 50px;
+		$buoy-thickness: 23px;
+
 		margin: 0 auto;
-		width: fit-content;
+		position: sticky;
 		display: flex;
 		align-items: center;
-		border-radius: $fab-size;
-		min-height: $fab-size;
-		min-width: $fab-size;
-		z-index: 9;
+		justify-content: center;
+		text-decoration: none;
+		color: #fff;
+		box-shadow: 0px 5px 10px rgb(166, 96, 55);
+		width: fit-content;
+		border-radius: $fab-diameter;
+		min-height: $fab-diameter;
+		min-width: $fab-diameter;
 		outline: $buoy-thickness solid var(--accent-orange);
 		animation: buoy-morph 1.5s cubic-bezier(0.26, 1, 0, 1) 0s forwards;
-		box-shadow: 0px 5px 10px rgb(166, 96, 55);
 
-		&::before {
+		.splash {
 			z-index: -1;
-			content: '';
-			border-radius: $fab-size;
-			height: $fab-size;
-			width: $fab-size;
-			background: radial-gradient(circle, rgba(85,148,171,0) 20%, rgba(70,105,199,1) 100%);
 			position: absolute;
 			top: 0;
-			left: 0;
+			border-radius: $fab-diameter;
+			height: $fab-diameter;
+			width: $fab-diameter;
+			background: radial-gradient(circle, rgba(85, 148, 171, 0) 20%, rgba(70, 105, 199, 1) 100%);
 			opacity: 0;
-			animation: buoy-splash 1.5s cubic-bezier(0.26, 1, 0, 1) .25s forwards;
+			animation: buoy-splash 1.5s cubic-bezier(0.26, 1, 0.5, 0.5) 0.25s forwards;
 		}
 
 		p {
@@ -68,7 +67,7 @@ const { href } = Astro.props;
 
 		@keyframes buoy-morph {
 			0% {
-				bottom: -100px;
+				bottom: -10px;
 				outline-width: $buoy-thickness;
 				transform: scale(1.5);
 				filter: blur(6px);
@@ -90,11 +89,12 @@ const { href } = Astro.props;
 
 		@keyframes copy-appear {
 			from {
+				max-width: 0px;
 				font-size: 0;
 				opacity: 0;
 			}
 			to {
-				opacity: 1;
+				max-width: 999px;
 			}
 		}
 	}

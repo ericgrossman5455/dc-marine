@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Head.astro';
 import Logo from '../components/Logo.astro';
-import Hero from '../components/Hero.astro';
+import Hero from '../components/sections/Hero.astro';
 import BuoyFAB from '../components/BuoyFAB.astro';
 ---
 
@@ -12,13 +12,13 @@ import BuoyFAB from '../components/BuoyFAB.astro';
 			Lorem ipsum dolor sit amet, <b>consectetur adipiscing</b> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		</Hero>
 
-		<div style="background-color: #f2f2f2; height: 100vh; z-index: 1; position: relative">
+		<BuoyFAB href='#'>Contact</BuoyFAB>
+		<div style="background-color: #f2f2f2; height: 100vh; z-index: 10; margin-top: -50px; position: relative">
 			<p>
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat minima non assumenda
 				reiciendis quae quia vel, esse rerum odio id ea fuga voluptatem incidunt enim consequatur ab odit
 				dolorem?
 			</p>
 		</div>
-		<BuoyFAB href='#'>Contact</BuoyFAB>
 	</main>
 </Layout>
