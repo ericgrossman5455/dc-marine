@@ -2,8 +2,7 @@
 
 @font-face {
 	font-family: 'Rufina';
-	src: url('../fonts/Rufina-Bold.woff2') format('woff2'),
-			url('../fonts/Rufina-Bold.woff') format('woff');
+	src: url('../fonts/Rufina-Bold.woff2') format('woff2'), url('../fonts/Rufina-Bold.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
@@ -12,7 +11,7 @@
 @font-face {
 	font-family: 'Rufina';
 	src: url('../fonts/Rufina-Regular.woff2') format('woff2'),
-			url('../fonts/Rufina-Regular.woff') format('woff');
+		url('../fonts/Rufina-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -21,7 +20,7 @@
 @font-face {
 	font-family: 'Nunito Sans';
 	src: url('../fonts/NunitoSans-ExtraLightItalic.woff2') format('woff2'),
-			url('../fonts/NunitoSans-ExtraLightItalic.woff') format('woff');
+		url('../fonts/NunitoSans-ExtraLightItalic.woff') format('woff');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
@@ -30,7 +29,7 @@
 @font-face {
 	font-family: 'Nunito Sans';
 	src: url('../fonts/NunitoSans-ExtraLight.woff2') format('woff2'),
-			url('../fonts/NunitoSans-ExtraLight.woff') format('woff');
+		url('../fonts/NunitoSans-ExtraLight.woff') format('woff');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
@@ -39,7 +38,7 @@
 @font-face {
 	font-family: 'Nunito Sans';
 	src: url('../fonts/NunitoSans-Medium.woff2') format('woff2'),
-	url('../fonts/NunitoSans-Medium.woff') format('woff');
+		url('../fonts/NunitoSans-Medium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -48,24 +47,24 @@
 @font-face {
 	font-family: 'Nunito Sans';
 	src: url('../fonts/NunitoSans-MediumItalic.woff2') format('woff2'),
-			url('../fonts/NunitoSans-MediumItalic.woff') format('woff');
+		url('../fonts/NunitoSans-MediumItalic.woff') format('woff');
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
 }
 
-h1, .h1 {
+h1 {
 	font-family: Rufina, serif;
-	font-size: 90px;
+	font-size: clamp(3rem, 6.25vw, 5.5rem);
 	font-weight: bold;
-	line-height: .9;
+	line-height: 0.9;
 	letter-spacing: 8px;
 }
 
-p, .p {
+p {
 	font-family: Nunito Sans, sans-serif;
 	font-weight: 200;
-	font-size: 21px;
+	font-size: clamp(1.1rem, 1.75vw, 1.3rem);
 	line-height: 1.5;
 
 	b {
@@ -74,16 +73,5 @@ p, .p {
 
 	em {
 		font-style: italic;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-	h1, .h1 {
-		font-size: 60px;
-	}
-	
-	p, .p {
-		font-size: 18px;
-		line-height: 1.5;
 	}
 }
