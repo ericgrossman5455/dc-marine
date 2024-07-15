@@ -1,19 +1,45 @@
 ---
 import Layout from '../layouts/Head.astro';
 import Logo from '../components/Logo.astro';
-import Hero from '../components/sections/Hero.astro';
 import BuoyFAB from '../components/BuoyFAB.astro';
+import Hero from '../components/sections/Hero.astro';
+import Gallery from '../components/sections/Gallery.astro';
 ---
 
 <Layout title='DC Marine' description='Boat repairs, enhancements, and equipment by Dave Canepa'>
 	<Logo />
 	<main>
 		<Hero greeting='Repair Refine Retrofit' greetingLineBreaks={true}>
-			Lorem ipsum dolor sit amet, <b>consectetur adipiscing</b> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Lorem ipsum dolor sit amet, <b>consectetur adipiscing</b> elit, sed do eiusmod tempor incididunt ut
+			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+			ut aliquip ex ea commodo consequat.
 		</Hero>
 
+		<Gallery
+			items={[
+				{
+					src: 'lady-j',
+					alt: 'A boat named Lady J',
+					caption:
+						'Complete electrical system retrofit, water maker and automatic identification system (AIS) installation',
+				},
+				{
+					src: 'olivia-rose',
+					alt: 'A boat named Olivia Rose',
+					caption: 'Repower and complete systems retro fitted',
+				},
+				{
+					src: 'oregon',
+					alt: 'A boat named Olivia Rose',
+					caption: 'Sterndrive repair and troubleshoot oil leaks and repair ',
+				},
+			]}
+		/>
+
 		<BuoyFAB href='#contact'>Contact</BuoyFAB>
-		<div id="contact" style="background-color: #f2f2f2; color: #000; height: 100vh; z-index: 10; margin-top: -50px; position: relative">
+		<div
+			id='contact'
+			style='background-color: #f2f2f2; color: #000; height: 100vh; z-index: 10; margin-top: -50px; position: relative'>
 			<p>
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat minima non assumenda
 				reiciendis quae quia vel, esse rerum odio id ea fuga voluptatem incidunt enim consequatur ab odit

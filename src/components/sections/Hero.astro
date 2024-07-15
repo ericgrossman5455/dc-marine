@@ -9,10 +9,10 @@ interface Props {
 const { greeting, greetingLineBreaks } = Astro.props;
 ---
 
-<section class='hero'>
-	<div class='greeting'>
+<section class='section-hero'>
+	<div class='hero'>
 		<h1 class={greetingLineBreaks ? 'line-breaks' : ''}>{greeting}</h1>
-		<Line bleed={false} />
+		<Line bleed={false} dark={false} />
 		<p>
 			<slot />
 		</p>
@@ -20,7 +20,7 @@ const { greeting, greetingLineBreaks } = Astro.props;
 </section>
 
 <style lang='scss'>
-	.hero {
+	.section-hero {
 		$hero-min-height: 700px;
 
 		background: linear-gradient(148deg, #558aab 0%, #2a407b 50%, #122840 100%);
@@ -75,7 +75,7 @@ const { greeting, greetingLineBreaks } = Astro.props;
 			}
 		}
 
-		.greeting {
+		.hero {
 			max-width: 1140px;
 
 			h1 {

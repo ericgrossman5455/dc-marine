@@ -61,6 +61,14 @@ h1 {
 	letter-spacing: 8px;
 }
 
+h2 {
+	font-family: Rufina, serif;
+	font-size: clamp(2rem, 3.25vw, 4rem);
+	font-weight: normal;
+	line-height: 0.9;
+	letter-spacing: 4px;
+}
+
 p {
 	font-family: Nunito Sans, sans-serif;
 	font-weight: 200;
