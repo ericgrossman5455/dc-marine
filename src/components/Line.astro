@@ -7,27 +7,37 @@ interface Props {
 const { bleed, dark } = Astro.props;
 ---
 
-<div class=`line ${bleed ? 'bleed' : ''} ${dark ? 'dark' : ''}`></div>
+<div class='line-container'>
+	<div class=`line ${bleed ? 'bleed' : ''} ${dark ? 'dark' : ''}`></div>
+</div>
 
 <style lang='scss'>
-	.line {
-		width: 100%;
-		margin-top: 25px;
-		margin-bottom: 25px;
-		border-top: 1px solid #fff;
+	.line-container {
+		overflow-x: hidden;
 
-		&.dark {
-			border-top-color: #4D4D4D;
-		}
-		
-		&.bleed {
-			transform: scaleX(3);
-			transform-origin: 0;
-		}
-		
-		@media only screen and (max-width: 600px) {
-			margin-top: 15px;
-			margin-bottom: 15px;
+		.line {
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 25px;
+			border-top: 1px solid #fff;
+
+			&.dark {
+				border-top-color: #4d4d4d;
+			}
+
+			&.bleed {
+				transform: scaleX(3);
+				transform-origin: 0;
+			}
+
+			@media only screen and (max-width: 600px) {
+				margin-top: 15px;
+				margin-bottom: 15px;
+
+				&.bleed {
+					transform: scaleX(1);
+				}
+			}
 		}
 	}
 </style>

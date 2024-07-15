@@ -19,10 +19,6 @@ const { items } = Astro.props;
 		z-index: 2;
 		padding: 10vh 0;
 
-		// @media only screen and (max-width: 600px) {
-		// 	padding: 0 25px;
-		// }
-
 		.header {
 			margin-left: 10%;
 
@@ -32,9 +28,10 @@ const { items } = Astro.props;
 		}
 
 		.gallery {
+			margin-top: 7px;
 			display: flex;
-			overflow-x: scroll;
 			column-gap: 25px;
+			overflow-x: scroll;
 
 			.item:first-child {
 				padding-left: 10%;
@@ -76,6 +73,38 @@ const { items } = Astro.props;
 				left: 25px;
 				max-width: 500px;
 			}
+
+		}
+		@media only screen and (max-width: 600px) {
+			padding: 7vh 25px;
+			
+			.header {
+				margin: 0;
+			}
+			
+			.gallery {
+				margin-top: 10px;
+				flex-direction: column;
+				row-gap: 25px;
+
+				.item:first-child, .item:last-child {
+					padding: initial;
+				}
+	
+				&::before, &::after {
+					content: none;
+				}
+
+				img {
+					height: auto;
+					width: 100%;
+				}
+
+				p {
+					// margin: 10px 0 25px;
+				}
+			}
+
 		}
 	}
 </style>
@@ -90,7 +119,7 @@ const { items } = Astro.props;
 		items.map((item) => (
 			<div class="item">
 				<img src=`/assets/${item.src}.jpg` alt={item.alt}>
-				<p>{item.caption}</p>
+				<p><b>Services |</b> {item.caption}</p>
 			</div>
 		))
 		}

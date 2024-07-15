@@ -63,7 +63,7 @@ h1 {
 
 h2 {
 	font-family: Rufina, serif;
-	font-size: clamp(2rem, 3.25vw, 4rem);
+	font-size: clamp(2rem, 3.25vw, 3.5rem);
 	font-weight: normal;
 	line-height: 0.9;
 	letter-spacing: 4px;
