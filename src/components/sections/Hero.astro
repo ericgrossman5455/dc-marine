@@ -21,26 +21,19 @@ const { greeting, greetingLineBreaks } = Astro.props;
 
 <style lang='scss'>
 	.section-hero {
-		$hero-min-height: 700px;
-
 		background: linear-gradient(148deg, #558aab 0%, #2a407b 50%, #122840 100%);
 		padding: 0 10%;
 		height: 100svh;
-		min-height: $hero-min-height;
+		min-height: 700px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		position: sticky;
-		top: 0;
-		contain: layout;
+		overflow: hidden;
+		position: relative;
+		
 
 		@media only screen and (max-width: 600px) {
 			padding: 0 25px;
-		}
-
-		@media only screen and (max-height: $hero-min-height) {
-			// disable "sticky" so that all content can be read on scroll again
-			position: initial;
 		}
 
 		&::after {

@@ -17,7 +17,6 @@ const { items } = Astro.props;
 		color: #4D4D4D;
 		background-color: #EDEDED;
 		position: relative;
-		z-index: 2;
 		padding: 10vh 0;
 
 		.header {
@@ -38,10 +37,11 @@ const { items } = Astro.props;
 				padding-right: 10%;
 			}
 
-			&::before {
+			&::before, &::after {
 				content: '';
 				height: 100%;
 				width: 10%;
+				pointer-events: none;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -49,11 +49,7 @@ const { items } = Astro.props;
 			}
 
 			&::after {
-				content: '';
-				height: 100%;
-				width: 10%;
-				position: absolute;
-				top: 0;
+				left: auto;
 				right: 0;
 				background: linear-gradient(90deg, rgba(237,237,237,0) 0%, rgba(237,237,237,1) 100%);
 			}
