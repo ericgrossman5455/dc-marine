@@ -10,9 +10,9 @@ interface item {
 const { items } = Astro.props;
 ---
 
-<!-- HTML IS BELOW STYLES -->
-
 <style lang='scss'>
+
+	// HTML is below these styles
 	.section-gallery {
 		color: #4D4D4D;
 		background-color: #EDEDED;
@@ -22,10 +22,6 @@ const { items } = Astro.props;
 
 		.header {
 			margin-left: 10%;
-
-			h2 {
-				text-transform: uppercase;
-			}
 		}
 
 		.gallery {
@@ -109,7 +105,7 @@ const { items } = Astro.props;
 <section class='section-gallery'>
 	<div class="header">
 		<h2>Featured Vessels</h2>
-		<Line bleed={true} dark={true} />
+		<Line dark={true} />
 	</div>
 	<div class='gallery'>
 		{

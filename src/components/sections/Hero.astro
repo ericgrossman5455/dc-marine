@@ -12,7 +12,7 @@ const { greeting, greetingLineBreaks } = Astro.props;
 <section class='section-hero'>
 	<div class='hero'>
 		<h1 class={greetingLineBreaks ? 'line-breaks' : ''}>{greeting}</h1>
-		<Line bleed={false} dark={false} />
+		<Line dark={false} />
 		<p>
 			<slot />
 		</p>
@@ -78,12 +78,8 @@ const { greeting, greetingLineBreaks } = Astro.props;
 		.hero {
 			max-width: 1140px;
 
-			h1 {
-				text-transform: uppercase;
-
-				&.line-breaks {
-					word-spacing: 100vw;
-				}
+			h1.line-breaks {
+				word-spacing: 100vw;
 			}
 
 			p {

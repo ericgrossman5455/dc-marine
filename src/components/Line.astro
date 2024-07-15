@@ -1,14 +1,13 @@
 ---
 interface Props {
-	bleed: boolean;
 	dark: boolean;
 }
 
-const { bleed, dark } = Astro.props;
+const { dark } = Astro.props;
 ---
 
 <div class='line-container'>
-	<div class=`line ${bleed ? 'bleed' : ''} ${dark ? 'dark' : ''}`></div>
+	<div class=`line ${dark ? 'dark' : ''}`></div>
 </div>
 
 <style lang='scss'>
@@ -25,18 +24,9 @@ const { bleed, dark } = Astro.props;
 				border-top-color: #4d4d4d;
 			}
 
-			&.bleed {
-				transform: scaleX(3);
-				transform-origin: 0;
-			}
-
 			@media only screen and (max-width: 600px) {
 				margin-top: 15px;
 				margin-bottom: 15px;
-
-				&.bleed {
-					transform: scaleX(1);
-				}
 			}
 		}
 	}
