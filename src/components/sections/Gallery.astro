@@ -99,7 +99,7 @@ const { items } = Astro.props;
 
 <section class='section-gallery'>
 	<div class="header">
-		<h2>Featured Vessels</h2>
+		<h2>Featured Work</h2>
 		<Line dark={true} />
 	</div>
 	<div class='gallery'>
@@ -107,7 +107,7 @@ const { items } = Astro.props;
 		items.map((item) => (
 			<div class="item">
 				<img src=`/assets/${item.src}.jpg` alt={item.alt}>
-				<p><b>Services </b>/ {item.caption}</p>
+				<p><b>Services provided </b>/ {item.caption}</p>
 			</div>
 		))
 		}
