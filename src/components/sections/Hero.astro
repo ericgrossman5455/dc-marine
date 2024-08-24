@@ -1,0 +1,87 @@
+---
+import Line from '../Line.astro';
+
+interface Props {
+	greeting: string;
+	greetingLineBreaks: boolean;
+}
+
+const { greeting, greetingLineBreaks } = Astro.props;
+---
+
+<section class='section-hero'>
+	<div class='hero'>
+		<h1 class={greetingLineBreaks ? 'line-breaks' : ''}>{greeting}</h1>
+		<Line dark={false} />
+		<p>
+			<slot />
+		</p>
+	</div>
+</section>
+
+<style lang='scss'>
+	.section-hero {
+		background: linear-gradient(148deg, #558aab 0%, #2a407b 50%, #122840 100%);
+		padding: 0 10%;
+		height: 100svh;
+		min-height: 700px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		position: relative;
+
+		@media only screen and (max-width: 600px) {
+			padding: 0 25px;
+		}
+
+		&::after {
+			content: '';
+			pointer-events: none;
+			position: absolute;
+			background-image: url(/assets/light-rays.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			transform: rotate(-38deg);
+			opacity: 0.3;
+			filter: saturate(0.5) blur(0px);
+			width: 1000px;
+			height: 700px;
+			top: -17px;
+			left: -100px;
+			animation: light-ray-shine 6s cubic-bezier(0.26, 0.4, 0, 1) 0s backwards;
+
+			@media only screen and (max-width: 600px) {
+				transform: rotate(-27deg);
+				width: 880px;
+				top: 40px;
+				left: -244px;
+			}
+		}
+
+		@keyframes light-ray-shine {
+			from {
+				opacity: 0;
+				transform: rotate(-38deg) scale(0.8);
+				filter: saturate(0.5) blur(50px);
+			}
+		}
+
+		.hero {
+			max-width: 1140px;
+
+			h1.line-breaks {
+				word-spacing: 100vw;
+			}
+
+			p {
+				max-width: 550px;
+				margin-left: auto;
+
+				@media only screen and (max-width: 1080px) {
+					margin-left: initial;
+				}
+			}
+		}
+	}
+</style>

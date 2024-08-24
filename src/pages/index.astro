@@ -1,51 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
+import Head from '../layouts/Head.astro';
+import Logo from '../components/Logo.astro';
+import BuoyFAB from '../components/BuoyFAB.astro';
+import Hero from '../components/sections/Hero.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import Contact from '../components/sections/Contact.astro';
 ---
 
-<Layout title='DC Marine'>
+<Head title='DC Marine' description='Your one-stop shop for boat repairs, enhancements, and equipment.'>
+	<Logo />
 	<main>
-		<Icon class='wordmark-horizontal' name='wordmark-horizontal' />
-		<Icon class='wordmark-vertical' name='wordmark-vertical' />
-		<h1>Ahoy.</h1>
-		<p class='instructions'>
-			This site is currently being built...
-		</p>
+		<Hero greeting='Sales Service Parts' greetingLineBreaks={true}>
+			DC Marine provides expert service and repair for all your marine needs. Years of experience in both the marine and heavy-duty truck sectors have given us unique expertise that we can share with you. Whether your needs are big or small, we are ready to provide the quality service you deserve.
+		</Hero>
+
+		<Gallery
+			items={[
+				{
+					src: 'lady-j',
+					alt: 'A boat named Lady J',
+					caption:
+						'Complete electrical system retrofit, water maker, automatic identification system (AIS) and genset installation',
+				},
+				{
+					src: 'olivia-rose',
+					alt: 'A boat named Olivia Rose',
+					caption: 'Repower and complete systems retrofit',
+				},
+				{
+					src: 'oregon',
+					alt: 'A boat with an Oregon ID',
+					caption: 'Sterndrive repair, troubleshooting and repair of oil leaks',
+				},
+			]}
+		/>
+
+		<BuoyFAB href='#contact'>Contact</BuoyFAB>
+		<Contact email='dcmarinenw@gmail.com' phone={8052315218} phoneDisplay='805.231.5218' />
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		text-align: center;
-
-		h1 {
-			margin-bottom: .5rem;
-		}
-
-		.wordmark-horizontal {
-			font-size: 40px;
-			display: none;
-			margin: 0 auto;
-		}
-
-		.wordmark-vertical {
-			font-size: 60px;
-			display: block;
-			margin: 20px auto;
-		}
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-</style>

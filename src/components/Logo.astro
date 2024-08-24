@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class='wordmark-container'>
+	<a href="#">
+		<Icon class='wordmark-horizontal' name='wordmark-horizontal' />
+		<Icon class='wordmark-vertical' name='wordmark-vertical' />
+	</a>
+</div>
+
+<style lang='scss'>
+	.wordmark-container {
+		position: fixed;
+		width: fit-content;
+		z-index: 10;
+
+		.wordmark-horizontal {
+			display: block;
+			font-size: 40px;
+			margin-top: 50px;
+			margin-left: 60px;
+		}
+
+		.wordmark-vertical {
+			display: none;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.wordmark-horizontal {
+				display: none;
+			}
+
+			.wordmark-vertical {
+				display: block;
+				font-size: 55px;
+				margin-top: 30px;
+				margin-left: 25px;
+			}
+		}
+	}
+</style>
+
+<script>
+	const Wordmark = document.querySelector('.wordmark-container');
+	const SectionGallery = document.querySelector('.section-gallery');
+
+	function isElementOnTop(el) {
+		const elTop = el.getBoundingClientRect().top;
+		return elTop <= 50;
+	}
+
+	function isElementGone(el) {
+		const elBottom = el.getBoundingClientRect().bottom;
+		return elBottom <= 50;
+	}
+
+	function handleScroll() {
+		if (isElementOnTop(SectionGallery)) {
+			Wordmark.style.color = '#4D4D4D';
+		} else {
+			Wordmark.removeAttribute('style');
+		}
+
+		if (isElementGone(SectionGallery)) {
+			Wordmark.removeAttribute('style');
+		}
+	}
+
+	window.addEventListener('scroll', handleScroll)
+
+</script>

@@ -1,0 +1,33 @@
+---
+interface Props {
+	dark: boolean;
+}
+
+const { dark } = Astro.props;
+---
+
+<div class='line-container'>
+	<div class=`line ${dark ? 'dark' : ''}`></div>
+</div>
+
+<style lang='scss'>
+	.line-container {
+		overflow-x: hidden;
+
+		.line {
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 25px;
+			border-top: 1px solid #fff;
+
+			&.dark {
+				border-top-color: #4d4d4d;
+			}
+
+			@media only screen and (max-width: 600px) {
+				margin-top: 15px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+</style>
