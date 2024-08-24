@@ -1,5 +1,5 @@
 # Oh hey,
-This is my scaffolding for a basic Astro project. I'm using the Astro framework to build this site.
+I'm using the Astro framework to build this site.
 
 ## To get started:
 
